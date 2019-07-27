@@ -4,9 +4,7 @@
 # Hugo - Static Site Generator | Tutorial
 
 
-## [by Mike Dane](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3)
-
-
+## by Mike Dane. [Course Link](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3)
 
 
 
