@@ -6,6 +6,7 @@ draft: true
 author: "ramon"
 tags: ["tag1", "tag2", "tag3"]
 categories: ["cat1"]
+moods: ["Happy", "Upbeat"]
 ---
 
 <!-- Shortcode for youtube video -->
