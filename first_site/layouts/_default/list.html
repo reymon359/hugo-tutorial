@@ -9,8 +9,10 @@
 <body>
     <!-- to list all the content from the single files -->
     {{.Content}}
-    {{ range .Pages }}
-
+    <ul>
+        {{ range .Pages }}
+        <li><a href="{{.URL}}">{{.Title}}</a></li>
+    </ul>
     <!-- closing hugo function tag -->
     {{end}}
 </body>
