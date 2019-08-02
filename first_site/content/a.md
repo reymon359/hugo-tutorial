@@ -7,6 +7,7 @@ author: "ramon"
 tags: ["tag1", "tag2", "tag3"]
 categories: ["cat1"]
 moods: ["Happy", "Upbeat"]
+myVar: "myValue" # Custom variable. To access it, in the template use {{ .Params.myVar }}
 ---
 
 <!-- Shortcode for youtube video -->
