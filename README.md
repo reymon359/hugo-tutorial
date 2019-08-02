@@ -100,5 +100,172 @@ So if for example we want to add a new taxonomy called **moods** `moods: ["Happy
     mood = "moods"
 ```
 
+## Templates
+
+When we talk about templates in Hugo we talk about **html templates**. A Hugo theme is made up of Hugo templates. All of the list and single content pages use html templates. Any template in Hugo goes inside the **layouts folder inside the theme folder**. Then inside the **_default folder** are the list and single html files which have some pieces of code to render the content.
+
+### List Page Templates
+
+The list page templates are the templates that lists files use. We can also **overwrite** the templates creating our **custom ones** and to do so we go to the layout folder of the site ( not the one in the theme ), create a folder called _default and inside of it a list.html file.
+
+Then inside that html file we **display the content using hugo variables** like this  `{{.Content}}`. But if we want to show the content of all the single pages in our list page we use **hugo functions**.
+
+```
+<!-- to list all the content from the single files -->
+
+{{.Content}}
+
+{{ range .Pages }}
+
+    {{.Title}} <br>
+
+<!-- closing hugo function tag -->
+
+{{end}}
+```	
+
+We can also use other variables like `{{.URL}}` which lists the **url locations**. For example we can create a navigation menu:
+
+```
+  {{.Content}}
+
+    <ul>
+
+        {{ range .Pages }}
+
+        <li><a href="{{.URL}}">{{.Title}}</a></li>
+
+    </ul>
+
+    {{end}}
+```
+
+### Single Page Templates
+
+These one are used for the single pages and like the list page templates we can **overwrite** the theme ones with our custom just creating a **single.html** file in a **_default folder inside a layouts one**.
+
+```
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <h1>Header</h1>
+
+    <hr>
+
+    <!-- Using front matter info -->
+
+    <h3>{{.Title}}</h3>
+
+    <h4>{{.Date}}</h4>
+
+    {{.Content}}
+
+    <hr>
+
+    <h1>Footer</h1>
+
+</body>
+
+</html>
+
+```
+
+### Home Page Templates
+
+There is a third template we can use inside Hugo apart from the list and single page templates which is the **Home Template**. To overwrite a theme template with a custom one we have to create an **index.html** file inside our layouts folder.
+
+
+### Section Templates
+
+Imagine that we want a different template in some of our single pages. To do so we have to create our custom section template by creating a **new folder** inside the page **layouts folder** and **naming it with the section name** we want to create the template for. Now inside this folder we can create new list and single html templates that will overwrite the ones used by default in all the site.
+
+
+### Base Templates & Blocks
+
+This is a more advanced way of organizing the layout of a site. We create a **baseof.html** file inside a _default folder inside the site layouts one. This baseof.html is going to act as the **overarching template for our entire hugo site**. Every single page of the site is going to be implemented first with this template.
+
+Inside of this template we will use a **block** to define that all the main
+
+```
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    Top of baseof
+
+    <hr>
+
+    <!-- This means that the main site block will go here -->
+
+    {{ block "main" . }}
+
+    {{ end }}
+
+    <hr>
+
+    Bottom of baseof
+
+</body>
+
+</html>
+
+```
+
+And then in the list.html and single.html we write another block.
+
+```
+
+{{ define "main" }}
+
+    This is the list template
+
+{{ end }}
+
+```
+
+We can also use blocks to define **other site modules** like the footer and in the end using blocks makes our templates more powerful and layouts more modular.
+
+
+## Variables
+
+Variables in Hugo are basically **pieces of information** about either your pages or your website that we can use **inside our templates**. You can **only** use variables inside of **templates or inside the layouts folder**. Some of the basic variables from Hugo are:
+
+
+
+*   `{{ .Title }}` To access the title of the page.
+*   `{{ .Date }}` To display the date.
+*   `{{ .URL }}` It shows the Url of the page
+
+We can create our **custom variables** inside the **Front Matter** of a page. For example, if we add a `myVar: "myValue"` variable in the Front Matter we access it writing in the template `{{ .Params.myVar }}`. Furthermore, we can create custom variables on the template itself using `{{ $myVarName := "aString" }}` and then show it with just `{{ $myVarName }}`. We can declare **strings, numbers and booleans**. 
+
+To learn more about variables [here is the official documentation.](https://gohugo.io/variables/)
+
+
+
+
+
+
 
 
