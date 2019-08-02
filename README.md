@@ -268,6 +268,87 @@ We can create our **custom variables** inside the **Front Matter** of a page. Fo
 To learn more about variables [here is the official documentation.](https://gohugo.io/variables/)
 
 
+## Functions
+
+In Hugo functions are **pre-written pieces of code** that you can call to **do specific things**. Like it happened with the variables, we can **only access them in the templates on the layouts folder**. 
+
+The way to call a function is `{{ funcName param1 param2 }}`. Some examples of functions are:
+
+
+*   `{{ truncate 10 “This is a really long string” }}` It truncates the string to just show the first 10 characters. It will display like: `This is a ...`
+*   `{{ add 1 5 }}` Adds 2 numbers. It will display a `6`.
+*   `{{ sub 1 5 }}` Substracts 2 numbers. It will display a `-4`.
+*   `{{ singularize “dogs” }}` Changes to the singular name. It will display `dog`.
+
+Another useful	 function would be **range**. We use it in a list template to go through all the pages and access their variables.
+
+```html
+
+{{ range .Pages }}
+
+    {{.Title}} <br>
+
+{{end}}
+
+```
+
+To learn more about functions [here is the official documentation.](https://gohugo.io/functions/)
+
+
+## Conditionals. If statements
+
+They are just if-else statements that	allows you to **control the execution flow** of a program. We use them writing in a template file inside the layouts folder an **if** then an **operator** and finally a **condition** `{{ if operator condition }}`. There are a lot of operators to use and you use them in two character code. For example:
+
+
+
+*   `eq` Equal to
+*   `lt` Less than
+*   `le` Less than equal to
+*   `gt` Greater than
+*   `ge` Greater than equal to
+*   We can add the `not` keyword to them which will negate any of them
+
+Also we can add an `{{ else }}` statement.
+
+```
+
+{{ $var1 := “dog” }}
+
+{{ $var2 := “cat” }}
+
+{{ if eq $var1 $var2 }}
+
+    True
+
+{{ else }}
+
+    False
+
+{{ end }}
+
+```
+
+This will display `False` in the page. If we would like to **negate the condition** we have to write a **not** and wrap it inside **parenthesis** `{{ if not (eq $var1 $var2) }}`. You can also add an `and` or `or` operator. If $var1 is less than $var2 and $var1 is less than $var3:
+
+```
+
+{{ $var1 := 4 }}
+
+{{ $var2 := 3 }}
+
+{{ $var3 := 2 }}
+
+{{ if and (lt $var1 $var2) (lt $var1 $var3) }}
+
+    True
+
+{{ else }}
+
+    False
+
+{{ end }}
+
+```
 
 
 
