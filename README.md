@@ -110,7 +110,8 @@ The list page templates are the templates that lists files use. We can also **ov
 
 Then inside that html file we **display the content using hugo variables** like this  `{{.Content}}`. But if we want to show the content of all the single pages in our list page we use **hugo functions**.
 
-```
+```html
+
 <!-- to list all the content from the single files -->
 
 {{.Content}}
@@ -122,11 +123,13 @@ Then inside that html file we **display the content using hugo variables** like 
 <!-- closing hugo function tag -->
 
 {{end}}
+
 ```	
 
 We can also use other variables like `{{.URL}}` which lists the **url locations**. For example we can create a navigation menu:
 
-```
+```html
+
   {{.Content}}
 
     <ul>
@@ -138,13 +141,15 @@ We can also use other variables like `{{.URL}}` which lists the **url locations*
     </ul>
 
     {{end}}
+
 ```
 
 ### Single Page Templates
 
 These one are used for the single pages and like the list page templates we can **overwrite** the theme ones with our custom just creating a **single.html** file in a **_default folder inside a layouts one**.
 
-```
+```html
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -197,7 +202,7 @@ This is a more advanced way of organizing the layout of a site. We create a **ba
 
 Inside of this template we will use a **block** to define that all the main
 
-```
+```html
 
 <!DOCTYPE html>
 
@@ -235,7 +240,7 @@ Inside of this template we will use a **block** to define that all the main
 
 And then in the list.html and single.html we write another block.
 
-```
+```html
 
 {{ define "main" }}
 
