@@ -273,6 +273,40 @@ Partial templates are used to **encompass various elements** of our website maki
 To use it, in the single or list html file we have to pass in the **scope of the current file** `{{ partial "header" . }}` where the `.` represents the scope of all the variables I have access to. In other words, when we put a dot we are passing all the variables to the partial so it can access to them. We can also create and pass a dictionary to them `{{ partial "header" ( dict “myTitle” “myCustomTytle” ) }}` and in the partial access them with `<h1>{{.myTitle}}</h1>`
 
 
+### Shortcode Templates
+
+Shortcodes are **little pieces of code** that you put inside your markdown files and can use them across **multiple** files.  To use them we go to the layout folder and create a **shortcodes** folder and a new myshortcode.html file with a text `This is the shortcode text`.
+
+Now to access it we go to a markdown file inside the content folder and write `{{< myshortcode >}}`. We can pass variables to it like `{{< myshortcode color="blue" >}}` and to access them in the shortcode we use **.Get** `<p style="color:{{.Get `color`}}">This is the shortcode text</p>`. 
+
+We can also pass **positional parameters** `{{< myshortcode blue  >}}` and then use `<p style="color:{{.Get 0}}">This is the shortcode text</p>` where the 0 means that it will use the parameter in the first position.
+
+There are also **multiple tags shortcodes**. And to access the text passed we use **.Inner** `<p style="background-color: yellow">{{ .Inner }}</p>`** **in the shortcode.
+
+```
+
+<!-- Multiple tags shortcode -->
+
+{{< myshortcode >}}
+
+    This is the text inside the shortcode tags
+
+{{< /myshortcode >}}
+
+```
+
+Finally if we want to pass markdown text we use `%`
+
+```
+
+{{% myshortcode %}}
+
+    **bold text**
+
+{{% /myshortcode %}}
+
+```
+
 ## Variables
 
 Variables in Hugo are basically **pieces of information** about either your pages or your website that we can use **inside our templates**. You can **only** use variables inside of **templates or inside the layouts folder**. Some of the basic variables from Hugo are:
