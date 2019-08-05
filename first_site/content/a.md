@@ -15,11 +15,14 @@ myVar: "myValue" # Custom variable. To access it, in the template use {{ .Params
 <!-- positional parameter -->
 <!-- {{< myshortcode blue >}} -->
 <!-- Multiple tags shortcode -->
-
-{{< myshortcode >}}
+<!-- {{< myshortcode >}}
     This is the text inside the shortcode tags
-{{< /myshortcode >}}
+{{< /myshortcode >}} -->
 
+<!-- Passing markdown to shortcode -->
+{{% myshortcode %}}
+    **bold text**
+{{% /myshortcode %}}
 
 
 <!-- Shortcode for youtube video -->
