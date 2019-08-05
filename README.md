@@ -252,7 +252,7 @@ And then in the list.html and single.html we write another block.
 
 We can also use blocks to define **other site modules** like the footer and in the end using blocks makes our templates more powerful and layouts more modular.
 
-### Partial templates
+### Partial Templates
 
 Partial templates are used to **encompass various elements** of our website making it **more modular** like writing a footer or navigation bar. To use them we create a **partials** folder inside the layouts folder and a new html file. Partial templates should be html files. Example:
 
