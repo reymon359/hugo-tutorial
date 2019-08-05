@@ -421,5 +421,10 @@ Data in Hugo is stored in the **data folder** like a _mini-data-base_ with JSON,
 ```
 
 
+## Building Your Site
+
+How do we create a website folder to upload and host?  We use the **simplest** hugo command which is `hugo` then the site gets built and a **public folder** appears with the site ready to deploy somewhere. Remember to **delete the public folder** before making a new build.
+
+
 
 
