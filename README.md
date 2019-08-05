@@ -252,6 +252,26 @@ And then in the list.html and single.html we write another block.
 
 We can also use blocks to define **other site modules** like the footer and in the end using blocks makes our templates more powerful and layouts more modular.
 
+### Partial templates
+
+Partial templates are used to **encompass various elements** of our website making it **more modular** like writing a footer or navigation bar. To use them we create a **partials** folder inside the layouts folder and a new html file. Partial templates should be html files. Example:
+
+```html
+
+<!-- Partial template -->
+
+<h1>{{.Title}}</h1>
+
+<p>{{.Date}}</p>
+
+<hr>
+
+<br>
+
+```
+
+To use it, in the single or list html file we have to pass in the **scope of the current file** `{{ partial "header" . }}` where the `.` represents the scope of all the variables I have access to. In other words, when we put a dot we are passing all the variables to the partial so it can access to them. We can also create and pass a dictionary to them `{{ partial "header" ( dict “myTitle” “myCustomTytle” ) }}` and in the partial access them with `<h1>{{.myTitle}}</h1>`
+
 
 ## Variables
 
@@ -350,7 +370,21 @@ This will display `False` in the page. If we would like to **negate the conditio
 
 ```
 
+## Data Files
 
+Data in Hugo is stored in the **data folder** like a _mini-data-base_ with JSON, TOML or YAML files. So we added a states.json file and now we will access it this way with `.Site.Data.filename`:
+
+```html
+
+<!-- accesing data →
+
+{{range .Site.Data.states}} 
+
+    {{.name}} <br>
+
+{{end}}
+
+```
 
 
 
