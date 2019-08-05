@@ -10,6 +10,8 @@ moods: ["Happy", "Upbeat"]
 myVar: "myValue" # Custom variable. To access it, in the template use {{ .Params.myVar }}
 ---
 
+<!-- Custom Shortcode -->
+{{< myshortcode color="blue" >}}
 <!-- Shortcode for youtube video -->
 {{< youtube 2xkNJL4gJ9E >}}
 
