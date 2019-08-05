@@ -4,14 +4,15 @@
 # Hugo - Static Site Generator | Tutorial
 
 
-## by Mike Dane. [Course Link](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3)
+## by Mike Dane. [Course Link](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3). 
+In case you need it these notes are also [in this google document](https://docs.google.com/document/d/1D_3gWzBe5AiB1Gm1J5hN6dhE1kU16W_hhTKn7pBGRvw).
 
 
 
 ## Table of Contents
 
 - [Hugo - Static Site Generator | Tutorial](#hugo---static-site-generator--tutorial)
-  - [by Mike Dane. Course Link](#by-mike-dane-course-link)
+  - [by Mike Dane. Course Link.](#by-mike-dane-course-link)
   - [Table of Contents](#table-of-contents)
   - [Introduction to Hugo](#introduction-to-hugo)
   - [Installing Hugo on Windows](#installing-hugo-on-windows)
