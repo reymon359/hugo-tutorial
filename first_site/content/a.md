@@ -11,7 +11,17 @@ myVar: "myValue" # Custom variable. To access it, in the template use {{ .Params
 ---
 
 <!-- Custom Shortcode -->
-{{< myshortcode blue >}}
+<!-- {{< myshortcode color="blue" >}} -->
+<!-- positional parameter -->
+<!-- {{< myshortcode blue >}} -->
+<!-- Multiple tags shortcode -->
+
+{{< myshortcode >}}
+    This is the text inside the shortcode tags
+{{< /myshortcode >}}
+
+
+
 <!-- Shortcode for youtube video -->
 {{< youtube 2xkNJL4gJ9E >}}
 
