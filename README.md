@@ -10,12 +10,29 @@
 
 ## Table of Contents
 
-  - [Introduction to Hugo](#introduction-to-hugo)
-  - [Installing Hugo on Windows](#installing-hugo-on-windows)
-  - [Creating a New Site / Directory Structure](#creating-a-new-site--directory-structure)
-  - [Installing & Using Themes](#installing--using-themes)
-  - [Creating & Organizing Content](#creating--organizing-content)
-
+- [Table of Contents](#table-of-contents)
+- [Introduction to Hugo](#introduction-to-hugo)
+- [Installing Hugo on Windows](#installing-hugo-on-windows)
+- [Creating a New Site / Directory Structure](#creating-a-new-site--directory-structure)
+- [Installing & Using Themes](#installing--using-themes)
+- [Creating & Organizing Content](#creating--organizing-content)
+- [Front Matter](#front-matter)
+- [Archetypes](#archetypes)
+- [Shortcodes](#shortcodes)
+- [Taxonomies](#taxonomies)
+- [Templates](#templates)
+  - [List Page Templates](#list-page-templates)
+  - [Single Page Templates](#single-page-templates)
+  - [Home Page Templates](#home-page-templates)
+  - [Section Templates](#section-templates)
+  - [Base Templates & Blocks](#base-templates--blocks)
+  - [Partial Templates](#partial-templates)
+  - [Shortcode Templates](#shortcode-templates)
+- [Variables](#variables)
+- [Functions](#functions)
+- [Conditionals. If statements](#conditionals-if-statements)
+- [Data Files](#data-files)
+- [Building Your Site](#building-your-site)
 
 ## Introduction to Hugo
 
