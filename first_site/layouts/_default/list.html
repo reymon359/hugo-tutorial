@@ -15,6 +15,14 @@
     </ul>
     <!-- closing hugo function tag -->
     {{end}}
+
+
+
+    <!-- accesing data -->
+    {{range .Site.Data.states}} 
+        {{.name}} <br>
+    {{end}}
+
 </body>
 
 </html>
